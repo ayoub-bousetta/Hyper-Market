@@ -6,10 +6,10 @@
 $fsize:18px;
 $primcolor:#b93330;
 $pink:#FD466A;
-$yellow:#ffa150  ;
+$goldcolor:#d2b39e;  
 $fsmobile:16px;
-$bp:1290px;
-$fontfam:'Open Sans', sans-serif;
+$bp:992px;
+$fontfam:'Roboto', sans-serif;
 
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
@@ -36,6 +36,8 @@ html {
             border: 0px;
         }
 
+
+        
         
 
       
@@ -64,6 +66,9 @@ html {
 
                 i{
                     margin-right: 10px;
+                }
+                @media screen and (max-width:$bp){
+                    display: none;
                 }
             }
             span{
@@ -116,11 +121,20 @@ html {
 
         .search{    display: flex;padding: 20px 0;
 
+            @media screen and (max-width:$bp){
+                display: block;
+            }
+
             select,input{
+
+               
               
                 height: 58px;
                 background: #fff;
                 border-radius: 6px;padding: 0 10px;
+                @media screen and (max-width:$bp){
+                    width: 100%;
+                 }
 
             }
 
@@ -128,6 +142,9 @@ html {
                 max-width: 100%;
                 width: 250px;
                 flex: 1 0 20%;
+                @media screen and (max-width:$bp){
+                    width: 100%;
+                 }
                 
             }
 
@@ -149,6 +166,10 @@ html {
                     width: 400px;
                     margin: 0 10px;
                     flex: 1 0 40%;    padding-left: 38px;
+
+                    @media screen and (max-width:$bp){
+                        width: 100%;margin: 10px 0px;
+                     }
                     
     
                 }
@@ -225,6 +246,9 @@ html {
                     flex-wrap: wrap;
                     text-align: center;
                     align-items: center;
+                    @media screen and (max-width:$bp){
+                        display: inline-block; 
+                    }
 
                     .item{
                         width: 100%;
@@ -232,6 +256,10 @@ html {
                         flex-wrap: wrap;
                         text-align: center;
                         align-items: center;
+
+                        @media screen and (max-width:$bp){
+                            display: inline-block; 
+                        }
                     }
                 }
 
@@ -240,6 +268,12 @@ html {
                     flex: 0 0 11.5%; 
                     margin: 5px;
                     color: #fff;    padding: 10px 0;
+                    
+                    @media screen and (max-width:$bp){
+                        display: inline-block;     width: 45%;
+                    }
+
+                  
 
                     span,a{
                         display: block;
@@ -259,10 +293,17 @@ html {
                 display: flex;
                 padding: 20px 0px;
 
+                @media screen and (max-width:$bp){
+                    display: block;  
+                       width: 100%;
+                }
+
                 .box_foot{
                     color: #fff;flex-wrap: wrap;    flex: 1 0 33.3333333333%;
                     display: flex;
                     align-items: center;
+
+               
                     span{
                         line-height: 25px;
                         padding: 7px;
@@ -281,7 +322,15 @@ html {
 
                     justify-content: center;
 
-                   
+                    @media screen and (max-width:$bp){
+                           width: 100%;
+                           border-right:0px dashed #fff;
+                           align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px dashed;
+
+                           
+                    }
 
                 }
 
@@ -586,7 +635,17 @@ html {
 
 
     .warper{
-        padding-bottom:4rem; 
+        padding-bottom:8rem; 
+
+        
+        @media screen and (max-width:$bp){
+         
+          
+            
+            padding: 3rem;
+            padding-bottom:8rem; 
+                        
+                 }
     }
 
 
@@ -595,6 +654,14 @@ html {
         position: relative;
         width: 100%;
         padding: 40px 0px;padding-top: 6%;
+
+        @media screen and (max-width:$bp){
+         
+          
+            
+            padding-top: 19%;
+                        
+                 }
         hr{
             border: 1px dashed #fff;
             margin: 30px 0;
@@ -663,7 +730,16 @@ html {
         
     }
 
-    .col-3{
+    .col-6{
+
+        
+        @media screen and (max-width:$bp){
+         
+margin: 30px 0;
+
+
+            
+     }
 
         h6{
             font-size: 0.9rem;
@@ -799,5 +875,152 @@ html {
 
     }
 
+
+
+.shopping_card{
+
+    .container-warper{
+        justify-content: left; display: block;
+    }
+
+
+    .breadcrumb{
+        padding: 0;
+
+        li{   font-weight: bold;
+            display: inline;color: #b7b7b7;
+            a{
+                font-weight: normal;color: #b7b7b7;text-decoration: none;
+            }
+        }
+
+        li+li{ 
+         
+            &:before {
+                padding: 8px;
+                color: #b7b7b7;
+                content: "/\00a0";
+            }
+
+        } 
+
+    } 
+
+    .shopping_card_items{
+        display: block;
+
+        h2{
+            color: $primcolor;
+            font-weight: normal;
+            &:after{
+                content: "";
+                border: 1px solid $goldcolor;
+                width: 100%;
+                display: block;margin-top: 12px;
+
+            }
+        }
+
+        .table{
+
+            overflow: auto;
+            width: 100%;    margin-top: 4rem;
+
+            table{    min-width: 600px;
+                width: 100%;  table-layout: auto !important;
+
+                tr{
+                   text-align: center;
+
+                    th{  
+                        color: $goldcolor;padding: 10px 0;
+                        font-weight: bold; border-bottom:   1px solid $goldcolor;
+                       
+                    }
+                    td{padding: 10px 0;    font-weight: bold;
+                        color: $primcolor;
+                        border-bottom:   1px dashed $goldcolor;
+                      
+                        &.img{
+                            width: 18%;
+                        }
+                        p{
+                            font-weight: bold;
+                            margin: 0px;
+                        }
+                        span{
+                            font-size: 0.8rem;
+                            font-weight: normal;
+                            color: #ccc;
+                        }
+
+                        .addtocard{
+                            display: flex;
+                            width: 132px;
+                            margin: 0 auto;
+                            i{font-size: 1.7rem;
+                
+                                color: $primcolor;
+                                &:last-child{
+                                    margin-left: auto;
+                                }
+                            }
+                
+                            span{
+                                width: 100%;
+                                text-align: center;
+                                display: block;
+                                font-size: 1.2rem;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+
+             
+            }
+    
+
+        }
+
+
+        p{
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: right;
+            color:$primcolor;
+            font-size: 1.2rem;
+
+            span{
+                color: #ccc;
+            }
+
+
+        }
+
+        .cards{
+            text-align: right;
+            a{
+                background: $primcolor;
+                max-width: 250px;
+                text-decoration: none;
+                color: #fff;
+                display: inline-block;
+                padding: 10px 20px;
+
+                @media screen and (max-width:$bp){
+         
+                    display: block;
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                    text-align: center;
+                                
+                         }
+            }
+        }
+      
+       
+    }
+}
 
   }
